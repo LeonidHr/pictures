@@ -1,10 +1,11 @@
 
-const modals = (
-  triggerSelector, 
-  modalSelector, 
-  closeSelector, 
-  isCloseByOverlay = true
-) => {
+const modalTimerId = setTimeout(() => openModal('.popup-consultation'), 60000);
+let btnPressed;
+
+openModalByScroll('.fixed-gift');
+
+
+const modals = (triggerSelector, modalSelector, closeSelector, destroy = false) => {
   const trigger = document.querySelectorAll(triggerSelector),
         modal = document.querySelector(modalSelector),
         close = document.querySelector(closeSelector);
@@ -14,6 +15,12 @@ const modals = (
       if (e.target) {
         e.preventDefault();
         openModal(modalSelector);
+
+        btnPressed = true;
+
+        if (destroy) {
+          item.remove();
+        }
       }
     });
   });
@@ -21,28 +28,34 @@ const modals = (
   close.addEventListener("click", () => closeAllModals());
 
   modal.addEventListener("click", e => {
-    if (e.target === modal && isCloseByOverlay) {
+    if (e.target === modal) {
       closeAllModals();
     }
   });
 }
 
-const modalTimerId = setTimeout(() => openModal('.popup-consultation'), 60000);
-
 function openModal(modalSelector) {
   const scrollWidth = window.innerWidth - document.documentElement.clientWidth;
   closeAllModals();
 
-  document.querySelector(modalSelector).classList.add('show', 'animated_4ms', 'fadeIn');
+  document.querySelector(modalSelector).classList.add('show', 'animated', 'fadeIn');
   document.body.classList.add('modal-open');
   document.body.style.marginRight = `${scrollWidth}px`;
 
   clearTimeout(modalTimerId);
 }
 
+function openModalByScroll(selector) {
+  window.addEventListener("scroll", () => {
+    if (!btnPressed && (window.scrollY + document.documentElement.clientHeight) >= document.documentElement.scrollHeight - 1) {
+      document.querySelector(selector).click();
+    }
+  });
+}
+
 function closeModal(modalSelector) {
   document.body.style.marginRight = '0px';
-  document.querySelector(modalSelector).classList.remove('show', 'animated_4ms', 'fadeIn');
+  document.querySelector(modalSelector).classList.remove('show', 'animated', 'fadeIn');
   document.body.classList.remove('modal-open');
 }
 
@@ -53,5 +66,7 @@ function closeAllModals() {
     closeModal(`.${item.dataset.modal}`);
   });
 }
+
+console.log(document.compatMode);
 
 export default modals;
