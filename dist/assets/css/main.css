@@ -36,6 +36,7 @@ html {
 }
 body {
   font-family: 'Circe Regular', sans-serif;
+  overflow-x: hidden; 
 }
 p {
   margin: 0;
@@ -58,6 +59,9 @@ h2,
 h3,
 h4 {
   font-family: 'Circe Extra Bold', sans-serif;
+}
+img {
+  max-width: 100%;
 }
 .p15 {
   font-size: 1.5;
@@ -89,6 +93,7 @@ h4 {
   right: 2px;
   background-size: 100%;
 }
+
 .button-order {
   background-image: linear-gradient(66deg, #a12ab1 0%, #c818bc 100%);
   box-shadow: 0px 15px 30px 0px rgba(170, 38, 183, 0.39);
@@ -355,6 +360,9 @@ h4 {
 .main .button-order {
   padding: 1.5rem 4rem;
   margin-bottom: 7rem;
+}
+.main .row {
+  overflow: hidden;
 }
 .main-slider-btn {
   position: absolute;
@@ -839,6 +847,9 @@ h4 {
 }
 .feedback-slider-item {
   padding-bottom: 5rem;
+}
+.feedback-slider-item {
+  position: absolute;
 }
 .feedback-block {
   position: relative;

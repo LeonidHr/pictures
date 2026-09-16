@@ -67,6 +67,4 @@ function closeAllModals() {
   });
 }
 
-console.log(document.compatMode);
-
 export default modals;
