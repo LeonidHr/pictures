@@ -222,18 +222,18 @@ img {
   font-size: 1em;
   /* example */
 
-  height: 4em;
   /* example */
 
   line-height: 2em /* the same as height */
 ;
 }
+
 .main .file_upload > button {
   float: right;
   width: 8em;
   /* example */
 
-  height: 100%;
+  height: 4em;
 }
 .main .file_upload > div {
   padding-left: 1em;
@@ -560,7 +560,6 @@ img {
   font-size: 1em;
   /* example */
 
-  height: 4em;
   /* example */
 
   line-height: 2em /* the same as height */
@@ -571,7 +570,7 @@ img {
   width: 8em;
   /* example */
 
-  height: 100%;
+  height: 4em;
 }
 .calc .file_upload > div {
   padding-left: 1em /* example */
@@ -1079,6 +1078,11 @@ img {
   color: #ffffff;
   border: none;
 }
+
+.status {
+  text-align: center;
+}
+
 .popup-content {
   position: fixed;
   text-align: center;
@@ -1089,6 +1093,7 @@ img {
   border-radius: 4px;
   transform: translateX(-50%) !important;
   padding: 4rem 6rem 5rem 6rem;
+  transition: 0.4s all;
 }
 .popup-gift {
   z-index: 20;
@@ -1159,7 +1164,6 @@ img {
   font-size: 1em;
   /* example */
 
-  height: 4em;
   /* example */
 
   line-height: 2em /* the same as height */
@@ -1170,7 +1174,7 @@ img {
   width: 8em;
   /* example */
 
-  height: 100%;
+  height: 4em;
 }
 .popup-design .file_upload > div {
   padding-left: 1em;
@@ -1734,5 +1738,48 @@ img {
   .popup-content {
     padding: 3rem 3rem;
     width: 25rem;
+  }
+}
+
+.error-message {
+  color: red;
+}
+
+.error-message {
+  margin-bottom: 1.5rem;
+}
+
+.popup-design .form input.error, 
+.popup-design .form textarea.error {
+  color: red;
+  border: 1px solid red;
+  margin-bottom: 0.5rem;
+}
+
+.popup-design .form input.error::placeholder, 
+.popup-design .form textarea.error::placeholder {
+  color: red;
+}
+
+.file_upload {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  button {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .file_inform {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .error-message {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-bottom: 0;
   }
 }
