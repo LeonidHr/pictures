@@ -1091,9 +1091,8 @@ img {
   top: 20%;
   background-color: #ededed;
   border-radius: 4px;
-  transform: translateX(-50%) !important;
   padding: 4rem 6rem 5rem 6rem;
-  transition: 0.4s all;
+  transform: translateX(-50%);
 }
 .popup-gift {
   z-index: 20;
@@ -1138,8 +1137,8 @@ img {
   top: 20%;
   background-color: #ededed;
   border-radius: 4px;
-  transform: translateX(-50%) !important;
   padding: 4rem 6rem 5rem 6rem;
+  transform: translateX(-50%);
 }
 .popup-design {
   z-index: 20;
@@ -1270,8 +1269,8 @@ img {
   top: 10%;
   background-color: #ededed;
   border-radius: 4px;
-  transform: translateX(-50%) !important;
   padding: 3rem 6rem 4rem 6rem;
+  transform: translateX(-50%);
 }
 @media (max-width: 1399px) {
   .paints {
@@ -1782,4 +1781,19 @@ img {
     grid-column-end: 3;
     margin-bottom: 0;
   }
+}
+
+@media (max-width: 1399px){
+  .file_upload {
+    grid-template-columns: 1fr;
+
+    button {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+}
+
+html {
+  overflow-x: hidden;
 }

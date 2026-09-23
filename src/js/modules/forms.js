@@ -23,7 +23,7 @@ const forms = () => {
       body: data
     });
 
-    return await res.text();
+    return res;
   }
 
   uploadInpArr.forEach(input => {
@@ -81,12 +81,19 @@ const forms = () => {
 
       postData(api, formData)
         .then(res => {
+          if (!res.ok) {
+            throw new Error(res.statusText + ' ' + res.status);
+          }
+
+          return res.text();
+        })
+        .then(res => {
           console.log(res);
           textMessage.textContent = statusMessages.success;
           img.setAttribute('src', statusMessages.ok);
         })
         .catch(error => {
-          console.log(error);
+          console.error(error);
           img.setAttribute('src', statusMessages.fail)
           textMessage.textContent = statusMessages.failure;
         })
@@ -149,7 +156,6 @@ function validateForm (form) {
 }
 
 function validateUpload(inp) {
-  console.log(inp.files[0]);
   const file = inp.files[0];
   let isValid = true;
 
