@@ -1288,7 +1288,7 @@ img {
     width: 100%;
   }
   .popup-design .file_upload > .file_inform {
-    display: none;
+    grid-row: 2;
   }
   .popup-design .file_upload > button {
     width: 100%;
@@ -1751,6 +1751,7 @@ img {
 
 .error-message {
   margin-bottom: 1.5rem;
+  line-height: normal;
 }
 
 @media (max-width: 992px){
