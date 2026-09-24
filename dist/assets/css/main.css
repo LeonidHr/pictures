@@ -1157,6 +1157,11 @@ img {
 .popup-design input[name="name"] {
   margin-top: 2rem;
 }
+@media (max-width: 992px){
+  .popup-design input[name="name"] {
+    margin-top: 0;
+  }
+}
 .popup-design .file_upload {
   position: relative;
   overflow: hidden;
@@ -1746,6 +1751,12 @@ img {
 
 .error-message {
   margin-bottom: 1.5rem;
+}
+
+@media (max-width: 992px){
+  .error-message {
+    margin-bottom: 0.8rem;
+  }
 }
 
 .popup-design .form input.error, 
