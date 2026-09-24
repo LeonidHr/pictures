@@ -1,10 +1,13 @@
 
 
-const sliders = (slide, dir, prev, next) => {
-  const slidesArr = document.querySelectorAll(slide);
+const sliders = (slide, dir, prev, next, wrap) => {
+  const slidesArr = document.querySelectorAll(slide),
+        sliderWrap = document.querySelector(wrap);
   let slideIndex = 1,
       isAnimating = false,
-      intervalId;
+      intervalId,
+      startX,
+      endX;
 
   initSlides(slideIndex);
   setAnimation();
@@ -74,6 +77,28 @@ const sliders = (slide, dir, prev, next) => {
       showSlides('right', 'left');
     });
 
+  } catch(e) {}
+
+  try {
+    sliderWrap.addEventListener("touchstart", e => {
+      clearInterval(intervalId);
+      startX = e.touches[0].clientX;
+    });
+
+    sliderWrap.addEventListener("touchend", e => {
+      setAnimation();
+      endX = e.changedTouches[0].clientX;
+    
+      const difference = startX - endX;
+
+      if (Math.abs(difference) < 50) return;
+
+      if (difference > 0) {
+        showSlides('right', 'left');
+      } else {  
+        showSlides('left', 'right');
+      }
+    });
   } catch(e) {}
 
   function setAnimation() {

@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
   modals('.button-consultation', '.popup-consultation', '.popup-consultation .popup-close');
   modals('.fixed-gift', '.popup-gift', '.popup-gift .popup-close', true);
 
-  sliders('.feedback-slider-item', '', '.main-prev-btn', '.main-next-btn');
+  sliders('.feedback-slider-item', '', '.main-prev-btn', '.main-next-btn', '.feedback-slider');
   sliders('.main-slider-item', 'vertical');
 
   forms();
