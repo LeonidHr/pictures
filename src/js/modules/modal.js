@@ -39,7 +39,7 @@ function openModal(modalSelector) {
   closeAllModals();
 
   document.querySelector(modalSelector).classList.add('show', 'animated', 'fadeIn');
-  document.body.classList.add('modal-open');
+  document.documentElement.classList.add('modal-open');
   document.body.style.marginRight = `${scrollWidth}px`;
 
   clearTimeout(modalTimerId);
@@ -56,7 +56,7 @@ function openModalByScroll(selector) {
 function closeModal(modalSelector) {
   document.body.style.marginRight = '0px';
   document.querySelector(modalSelector).classList.remove('show', 'animated', 'fadeIn');
-  document.body.classList.remove('modal-open');
+  document.documentElement.classList.remove('modal-open');
 }
 
 function closeAllModals() {

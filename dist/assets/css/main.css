@@ -1282,7 +1282,7 @@ img {
   .calc .file_upload > button {
     width: 100%;
   }
-  .popup-design .file_upload > div {
+  .popup-design .file_upload > .file_inform {
     display: none;
   }
   .popup-design .file_upload > button {
