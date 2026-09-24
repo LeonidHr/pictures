@@ -1794,6 +1794,10 @@ img {
   }
 }
 
+.file_upload {
+  margin-bottom: 1.5rem;
+}
+
 @media (max-width: 1399px){
   .file_upload {
     grid-template-columns: 1fr;
