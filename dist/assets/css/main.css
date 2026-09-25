@@ -968,11 +968,11 @@ img {
   flex-wrap: wrap;
 }
 .consultation input {
-  width: 30%;
+  width: 100%;
   padding: 1.5rem 4rem;
   border: none;
   border-radius: 50px;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 .consultation input::placeholder {
   color: black;
@@ -982,6 +982,20 @@ img {
   display: block;
   width: 100%;
 }
+
+.input-wrapper__input {
+  margin-bottom: 2rem;
+}
+
+.input-wrapper__input  .error-message {
+  margin-bottom: 0;
+}
+ 
+.input-wrapper__input-text {
+  display: block;
+  width: 100%;
+}
+
 .consultation .button-order {
   margin-top: 1rem;
 }

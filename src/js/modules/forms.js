@@ -1,3 +1,5 @@
+import { checkSingleInput } from "./checkTextInputs";
+
 
 const forms = () => {
   const formsArr = document.querySelectorAll('form'),
@@ -146,9 +148,14 @@ function validateForm (form) {
   reqInputs.forEach(inp => {
     removeError(inp);
 
+    if (inp.getAttribute('name') === 'phone' && inp.value.length < 19) {
+      showError(inp);
+      return isValid = false;
+    }
+
     if (inp.value.trim() === '') {
       showError(inp);
-      isValid = false;
+      return isValid = false;
     } 
   });
 
