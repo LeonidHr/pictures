@@ -967,6 +967,12 @@ img {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+@media (max-width: 992px){
+  .consultation .input-wrapper {
+    justify-content: center;
+  }  
+}
 .consultation input {
   width: 100%;
   padding: 1.5rem 4rem;
