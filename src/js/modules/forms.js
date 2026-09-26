@@ -1,5 +1,4 @@
-import { checkSingleInput } from "./checkTextInputs";
-
+import { postData } from "../services/requests";
 
 const forms = () => {
   const formsArr = document.querySelectorAll('form'),
@@ -17,15 +16,6 @@ const forms = () => {
   const pathApi = {
     design: 'assets/design.php',
     consult: 'assets/server.php'
-  }
-
-  const postData = async (url, data) => {
-    const res = await fetch(url, {
-      method: 'POST',
-      body: data
-    });
-
-    return res;
   }
 
   uploadInpArr.forEach(input => {
@@ -82,13 +72,6 @@ const forms = () => {
       form.classList.contains('form_design') ? api = pathApi.design : api = pathApi.consult;
 
       postData(api, formData)
-        .then(res => {
-          if (!res.ok) {
-            throw new Error(res.statusText + ' ' + res.status);
-          }
-
-          return res.text();
-        })
         .then(res => {
           console.log(res);
           textMessage.textContent = statusMessages.success;

@@ -42,8 +42,6 @@ const mask = (selector) => {
     } else {
       setCursorPosition(this.value.length, this);
     }
-
-    console.log(this.value.length);
   }
 
   function normilizePhone(val) {

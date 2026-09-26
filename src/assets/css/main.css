@@ -996,7 +996,7 @@ img {
 .input-wrapper__input  .error-message {
   margin-bottom: 0;
 }
- 
+
 .input-wrapper__input-text {
   display: block;
   width: 100%;
@@ -1814,6 +1814,14 @@ img {
     margin-bottom: 0;
   }
 }
+
+.error-message_big {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+ 
 
 .file_upload {
   margin-bottom: 1.5rem;
