@@ -5,9 +5,19 @@ const showMoreStyles = (triggerSelector, wrapperSelector) => {
         wrapper = document.querySelector(wrapperSelector);
 
   trigger.addEventListener("click", function() {
+    const loading = document.createElement('img');
+    loading.setAttribute('src', 'assets/img/spinner.gif');
+    wrapper.append(loading);
+
     getResourse('assets/db.json')
-      .then(res => createCard(res.styles))
-      .catch(error => showError(error));
+      .then(res => {
+        loading.remove();
+        createCard(res.styles);
+      })
+      .catch(error => {
+        loading.remove();
+        showError(error);
+      });
   
     this.remove();
   });

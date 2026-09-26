@@ -477,6 +477,10 @@ img {
   bottom: -25rem;
   left: 0;
 }
+
+.styles .row {
+  text-align: center;
+}
 .card-block {
   background-color: #f7e7e6;
   padding-top: 7rem;
