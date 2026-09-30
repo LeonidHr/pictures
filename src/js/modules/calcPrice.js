@@ -25,6 +25,8 @@ const calcPrice = (sizeSelector, materialSelector, optionsSelector, promocodeSel
           `);
         });
       });
+    }).catch(error => {
+      console.log(error);
     });
   }
 
@@ -48,6 +50,8 @@ const calcPrice = (sizeSelector, materialSelector, optionsSelector, promocodeSel
       } else {
         resultBlock.textContent = formState.sum;
       }
+    }).catch(error => {
+      console.log(error);
     }); 
   };
 
