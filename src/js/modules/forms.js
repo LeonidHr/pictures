@@ -1,6 +1,6 @@
 import { postData } from "../services/requests";
 
-const forms = () => {
+const forms = (formState) => {
   const formsArr = document.querySelectorAll('form'),
         uploadInpArr = document.querySelectorAll('[name="upload"]');
 
@@ -68,6 +68,12 @@ const forms = () => {
       statusMessage.append(textMessage);
 
       const formData = new FormData(form);
+      if (form.dataset.calc) {
+        for (let key in formState) {
+          formData.append(key, formState[key]);
+        }
+      }
+
       let api;
       form.classList.contains('form_design') ? api = pathApi.design : api = pathApi.consult;
 
@@ -84,6 +90,10 @@ const forms = () => {
         })
         .finally(() => {
           form.reset();
+
+          if (form.dataset.calc) {
+            form.querySelector('.calc-price').textContent = 'Для расчета нужно выбрать размер картины и материал картины';
+          }
 
           uploadInpArr.forEach(input => {
             input.previousElementSibling.textContent = 'Файл не выбран';

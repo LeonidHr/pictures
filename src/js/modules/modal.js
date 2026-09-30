@@ -4,7 +4,6 @@ let btnPressed;
 
 openModalByScroll('.fixed-gift');
 
-
 const modals = (triggerSelector, modalSelector, closeSelector, destroy = false) => {
   const trigger = document.querySelectorAll(triggerSelector),
         modal = document.querySelector(modalSelector),
